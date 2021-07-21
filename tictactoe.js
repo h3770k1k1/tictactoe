@@ -2,7 +2,7 @@ let filledFields = 0;
 let symbolsInLineCount = 0;
 let char = 'x'
 
-function addSymbol(button, square) {
+function addSymbol(square) {
     square.innerHTML = char;
 }
 
@@ -14,66 +14,25 @@ function changeChar() {
     }
 }
 
-document.getElementById("button-a1").addEventListener("click", function() {
-    let button = document.getElementById("button-a1");
-    let square = document.getElementById("square-a1");
-    addSymbol(button, square);
-    changeChar();
-    filledFields += 1;
-})
-document.getElementById("button-a2").addEventListener("click", function() {
-    let button = document.getElementById("button-a2");
-    let square = document.getElementById("square-a2");
-    addSymbol(button, square);
-    changeChar();
-    filledFields += 1;
-})
-document.getElementById("button-a3").addEventListener("click", function() {
-    let button = document.getElementById("button-a3");
-    let square = document.getElementById("square-a3");
-    addSymbol(button, square);
-    changeChar();
-    filledFields += 1;
-})
-document.getElementById("button-b1").addEventListener("click", function() {
-    let button = document.getElementById("button-b1");
-    let square = document.getElementById("square-b1");
-    addSymbol(button, square);
-    changeChar();
-    filledFields += 1;
-})
-document.getElementById("button-b2").addEventListener("click", function() {
-    let button = document.getElementById("button-b2");
-    let square = document.getElementById("square-b2");
-    addSymbol(button, square);
-    changeChar();
-    filledFields += 1;
-})
-document.getElementById("button-b3").addEventListener("click", function() {
-    let button = document.getElementById("button-b3");
-    let square = document.getElementById("square-b3");
-    addSymbol(button, square);
-    changeChar();
-    filledFields += 1;
-})
-document.getElementById("button-c1").addEventListener("click", function() {
-    let button = document.getElementById("button-c1");
-    let square = document.getElementById("square-c1");
-    addSymbol(button, square);
-    changeChar();
-    filledFields += 1;
-})
-document.getElementById("button-c2").addEventListener("click", function() {
-    let button = document.getElementById("button-c2");
-    let square = document.getElementById("square-c2");
-    addSymbol(button, square);
-    changeChar();
-    filledFields += 1;
-})
-document.getElementById("button-c3").addEventListener("click", function() {
-    let button = document.getElementById("button-c3");
-    let square = document.getElementById("square-c3");
-    addSymbol(button, square);
-    changeChar();
-    filledFields += 1;
-})
+
+const a1 = document.getElementById("square-a1");
+const a2 = document.getElementById("square-a2");
+const a3 = document.getElementById("square-a3");
+const b1 = document.getElementById("square-b1");
+const b2 = document.getElementById("square-b2");
+const b3 = document.getElementById("square-b3");
+const c1 = document.getElementById("square-c1");
+const c2 = document.getElementById("square-c2");
+const c3 = document.getElementById("square-c3");
+
+
+let squaresArray = [a1, a2, a3, b1, b2, b3, c1, c2, c3];
+arrayLength = squaresArray.length;
+for (let i = 0; i < arrayLength; i++) {
+    squaresArray[i].addEventListener("click", function() {
+        addSymbol(squaresArray[i]);
+        changeChar()
+
+    })
+
+}
