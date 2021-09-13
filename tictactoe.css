@@ -1,20 +1,75 @@
-#board {
+body {
+    background-color: rgb(179, 169, 189);
     display: flexbox;
-    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
-.button {
-    box-shadow: inset 0px 1px 0px 0px #ffffff;
-    background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
-    background-color: #ededed;
+#caption {
+    position: sticky;
+    padding-top: 20px;
+    padding-left: 45vw;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100vw;
+    height: 5vh;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+}
+
+#row-1 {
+    display: flexbox;
+    flex-direction: row;
+}
+
+.empty {
+    background-color: #ffffff;
     border: 5px solid #000000;
-    display: inline-block;
     cursor: pointer;
-    color: #777777;
     font-family: Arial;
     font-size: 15px;
-    font-weight: bold;
-    padding: 6px 24px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #ffffff;
+    height: 10vh;
+    width: 10vh;
+    padding: 0;
+}
+
+.krzyzyk {
+    background-color: #ffffff;
+    border: 5px solid #000000;
+    cursor: pointer;
+    font-family: Arial;
+    font-size: 15px;
+    height: 10vh;
+    width: 10vh;
+    padding: 0;
+    color: rgb(34, 255, 0);
+    margin: 2px;
+}
+
+.kolo {
+    background-color: #ffffff;
+    border: 5px solid #000000;
+    cursor: pointer;
+    font-family: Arial;
+    font-size: 15px;
+    height: 10vh;
+    width: 10vh;
+    padding: 0;
+    color: rgb(255, 0, 0);
+    margin: 2px;
+}
+
+.winning {
+    background-color: #450000;
+    border: 5px solid #000000;
+    cursor: pointer;
+    font-family: Arial;
+    font-size: 15px;
+    height: 10vh;
+    width: 10vh;
+    padding: 0;
 }

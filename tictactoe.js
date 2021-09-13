@@ -1,10 +1,33 @@
 let filledFields = 0;
 let char = 'x'
 let winCombination = false
+let divsArray = [];
 
-function addSymbol(button) {
+function changeClassToWinning(div1, div2, div3) {
+    if (char == 'kolo') {
+        div1.classList.remove("kolo");
+        div1.className += 'winning';
+        div2.classList.remove("kolo");
+        div2.className += 'winning';
+        div3.classList.remove("kolo");
+        div3.className += 'winning';
+
+    }
+    if (char == 'krzyzyk') {
+        div1.classList.remove("krzyzyk");
+        div1.className += 'winning';
+        div2.classList.remove("krzyzyk");
+        div2.className += 'winning';
+        div3.classList.remove("krzyzyk");
+        div3.className += 'winning';
+
+    }
+}
+
+function addSymbol(div) {
     if (winCombination == false) {
-        button.innerHTML = char;
+        div.innerHTML = char;
+
     }
 }
 
@@ -16,67 +39,112 @@ function changeChar() {
     }
 }
 
-const a1 = document.getElementById("button-a1");
-const a2 = document.getElementById("button-a2");
-const a3 = document.getElementById("button-a3");
-const b1 = document.getElementById("button-b1");
-const b2 = document.getElementById("button-b2");
-const b3 = document.getElementById("button-b3");
-const c1 = document.getElementById("button-c1");
-const c2 = document.getElementById("button-c2");
-const c3 = document.getElementById("button-c3");
-const buttonsArray = [a1, a2, a3, b1, b2, b3, c1, c2, c3];
+function makeBoard() {
+
+    let row1 = document.getElementById("row-1");
+    let row2 = document.getElementById("row-2");
+    let row3 = document.getElementById("row-3");
+
+
+    for (let i = 0; i <= 8; i++) {
+        let field = document.createElement("div");
+        field.className += 'empty';
+        divsArray.push(field);
+        if (i <= 2) {
+            row1.appendChild(field);
+        }
+
+        if (i > 2 && i <= 5) {
+            row2.appendChild(field);
+        }
+        if (i > 5 && i <= 8) {
+            row3.appendChild(field);
+
+        }
+
+
+
+
+    }
+
+
+}
+
 
 function checkIsWinCombination() {
-    if (buttonsArray[0].innerHTML == char && buttonsArray[1].innerHTML == char) {
-        if (buttonsArray[2].innerHTML == char) {
-            winCombination = true;
-        }
+
+    if (divsArray[0].innerHTML == char && divsArray[1].innerHTML == char && divsArray[2].innerHTML == char) {
+        winCombination = true;
+        window.alert('WIN');
+        changeClassToWinning(divsArray[0], divsArray[1], divsArray[2]);
+
     }
-    if (buttonsArray[3].innerHTML == char && buttonsArray[4].innerHTML == char) {
-        if (buttonsArray[5].innerHTML == char) {
-            winCombination = true;
-        }
+
+    if (divsArray[3].innerHTML == char && divsArray[4].innerHTML == char && divsArray[5].innerHTML == char) {
+        winCombination = true;
+        window.alert('WIN');
+        changeClassToWinning(divsArray[3], divsArray[4], divsArray[5]);
+
     }
-    if (buttonsArray[6].innerHTML == char && buttonsArray[7].innerHTML == char) {
-        if (buttonsArray[8].innerHTML == char) {
-            winCombination = true;
-        }
+    if (divsArray[6].innerHTML == char && divsArray[7].innerHTML == char && divsArray[8].innerHTML == char) {
+
+        winCombination = true;
+        window.alert('WIN');
+        changeClassToWinning(divsArray[6], divsArray[7], divsArray[8]);
+
     }
-    if (buttonsArray[0].innerHTML == char && buttonsArray[3].innerHTML == char) {
-        if (buttonsArray[6].innerHTML == char) {
-            winCombination = true;
-        }
+
+    if (divsArray[0].innerHTML == char && divsArray[3].innerHTML == char && divsArray[6].innerHTML == char) {
+
+        winCombination = true;
+        window.alert('WIN');
+        changeClassToWinning(divsArray[0], divsArray[3], divsArray[6]);
+
     }
-    if (buttonsArray[1].innerHTML == char && buttonsArray[4].innerHTML == char) {
-        if (buttonsArray[7].innerHTML == char) {
-            winCombination = true;
-        }
+    if (divsArray[1].innerHTML == char && divsArray[4].innerHTML == char && divsArray[7].innerHTML == char) {
+
+        winCombination = true;
+        window.alert('WIN');
+        changeClassToWinning(divsArray[1], divsArray[4], divsArray[7]);
+
     }
-    if (buttonsArray[2].innerHTML == char && buttonsArray[5].innerHTML == char) {
-        if (buttonsArray[8].innerHTML == char) {
-            winCombination = true;
-        }
+    if (divsArray[2].innerHTML == char && divsArray[5].innerHTML == char && divsArray[8].innerHTML == char) {
+
+        winCombination = true;
+        window.alert('WIN');
+        changeClassToWinning(divsArray[2], divsArray[5], divsArray[8]);
+
     }
-    if (buttonsArray[0].innerHTML == char && buttonsArray[4].innerHTML == char) {
-        if (buttonsArray[8].innerHTML == char) {
-            winCombination = true;
-        }
+    if (divsArray[0].innerHTML == char && divsArray[4].innerHTML == char && divsArray[8].innerHTML == char) {
+
+        winCombination = true;
+        window.alert('WIN');
+        changeClassToWinning(divsArray[0], divsArray[4], divsArray[8]);
+
     }
-    if (buttonsArray[2].innerHTML == char && buttonsArray[4].innerHTML == char) {
-        if (buttonsArray[6].innerHTML == char) {
-            winCombination = true;
-        }
+    if (divsArray[2].innerHTML == char && divsArray[4].innerHTML == char && divsArray[6].innerHTML == char) {
+
+        winCombination = true;
+        window.alert('WIN');
+        changeClassToWinning(divsArray[2], divsArray[4], divsArray[6]);
+
     }
 }
-
-for (let i = 0; i < buttonsArray.length; i++) {
-    buttonsArray[i].addEventListener("click", function() {
-        addSymbol(buttonsArray[i]);
+makeBoard();
+for (let i = 0; i <= divsArray.length; i++) {
+    divsArray[i].addEventListener("click", function() {
+        addSymbol(divsArray[i]);
         checkIsWinCombination();
         changeChar();
+        if (char == 'x') {
+            divsArray[i].classList.remove("empty");
+            divsArray[i].className += 'krzyzyk';
+
+        }
+        if (char == 'o') {
+            divsArray[i].classList.remove("empty");
+            divsArray[i].className += 'kolo';
+
+        }
     })
-}
-if (winCombination) {
-    window.alert('WIN')
 }
