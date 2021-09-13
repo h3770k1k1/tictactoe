@@ -42,12 +42,13 @@ body {
     border: 5px solid #000000;
     cursor: pointer;
     font-family: Arial;
-    font-size: 15px;
+    font-size: 4rem;
     height: 10vh;
     width: 10vh;
     padding: 0;
     color: rgb(34, 255, 0);
     margin: 2px;
+    text-align: center;
 }
 
 .kolo {
@@ -55,12 +56,13 @@ body {
     border: 5px solid #000000;
     cursor: pointer;
     font-family: Arial;
-    font-size: 15px;
+    font-size: 4rem;
     height: 10vh;
     width: 10vh;
     padding: 0;
     color: rgb(255, 0, 0);
     margin: 2px;
+    text-align: center;
 }
 
 .winning {
