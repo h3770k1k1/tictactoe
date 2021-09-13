@@ -73,3 +73,8 @@ body {
     width: 10vh;
     padding: 0;
 }
+
+#board {
+    border: 2px solid red;
+    display: flex;
+}

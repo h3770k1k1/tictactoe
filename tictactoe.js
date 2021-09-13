@@ -132,7 +132,7 @@ function checkIsWinCombination() {
 }
 makeBoard();
 for (let i = 0; i <= divsArray.length; i++) {
-    divsArray[i].addEventListener("click", function() {
+    divsArray[i].addEventListener("click", function () {
         addSymbol(divsArray[i]);
         checkIsWinCombination();
         changeChar();
