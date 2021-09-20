@@ -2,27 +2,8 @@ let filledFields = 0;
 let char = 'x'
 let winCombination = false
 let divsArray = [];
+document.getElementById("replay-button").style.display = "none";
 
-function changeClassToWinning(div1, div2, div3) {
-    if (char == 'kolo') {
-        div1.classList.remove("kolo");
-        div1.className += 'winning';
-        div2.classList.remove("kolo");
-        div2.className += 'winning';
-        div3.classList.remove("kolo");
-        div3.className += 'winning';
-
-    }
-    if (char == 'krzyzyk') {
-        div1.classList.remove("krzyzyk");
-        div1.className += 'winning';
-        div2.classList.remove("krzyzyk");
-        div2.className += 'winning';
-        div3.classList.remove("krzyzyk");
-        div3.className += 'winning';
-
-    }
-}
 
 function addSymbol(div) {
     if (winCombination == false) {
@@ -61,78 +42,80 @@ function makeBoard() {
             row3.appendChild(field);
 
         }
-
-
-
-
     }
+}
 
+function showWinningNotificationAndReplyButton() {
+    const winningNotification = document.getElementById('winning-notification');
+    winningNotification.innerHTML = char + ' wins!';
+    document.getElementById("replay-button").style.display = "";
 
 }
 
+function addingWinningClass(div1, div2, div3) {
+
+    div1.classList.add('winning');
+    div2.classList.add('winning');
+    div3.classList.add('winning');
+
+}
 
 function checkIsWinCombination() {
 
     if (divsArray[0].innerHTML == char && divsArray[1].innerHTML == char && divsArray[2].innerHTML == char) {
         winCombination = true;
-        window.alert('WIN');
-        changeClassToWinning(divsArray[0], divsArray[1], divsArray[2]);
+        addingWinningClass(divsArray[0], divsArray[1], divsArray[2]);
+        showWinningNotificationAndReplyButton();
 
     }
 
     if (divsArray[3].innerHTML == char && divsArray[4].innerHTML == char && divsArray[5].innerHTML == char) {
         winCombination = true;
-        window.alert('WIN');
-        changeClassToWinning(divsArray[3], divsArray[4], divsArray[5]);
+        addingWinningClass(divsArray[3], divsArray[4], divsArray[5]);
+        showWinningNotificationAndReplyButton();
 
     }
     if (divsArray[6].innerHTML == char && divsArray[7].innerHTML == char && divsArray[8].innerHTML == char) {
-
         winCombination = true;
-        window.alert('WIN');
-        changeClassToWinning(divsArray[6], divsArray[7], divsArray[8]);
+        addingWinningClass(divsArray[6], divsArray[7], divsArray[8]);
+        showWinningNotificationAndReplyButton();
 
     }
 
     if (divsArray[0].innerHTML == char && divsArray[3].innerHTML == char && divsArray[6].innerHTML == char) {
-
         winCombination = true;
-        window.alert('WIN');
-        changeClassToWinning(divsArray[0], divsArray[3], divsArray[6]);
+        addingWinningClass(divsArray[0], divsArray[3], divsArray[6]);
+        showWinningNotificationAndReplyButton();
 
     }
     if (divsArray[1].innerHTML == char && divsArray[4].innerHTML == char && divsArray[7].innerHTML == char) {
-
         winCombination = true;
-        window.alert('WIN');
-        changeClassToWinning(divsArray[1], divsArray[4], divsArray[7]);
+        addingWinningClass(divsArray[1], divsArray[4], divsArray[7]);
+        showWinningNotificationAndReplyButton();
 
     }
     if (divsArray[2].innerHTML == char && divsArray[5].innerHTML == char && divsArray[8].innerHTML == char) {
-
         winCombination = true;
-        window.alert('WIN');
-        changeClassToWinning(divsArray[2], divsArray[5], divsArray[8]);
+        addingWinningClass(divsArray[2], divsArray[5], divsArray[8]);
+        showWinningNotificationAndReplyButton();
 
     }
     if (divsArray[0].innerHTML == char && divsArray[4].innerHTML == char && divsArray[8].innerHTML == char) {
-
         winCombination = true;
-        window.alert('WIN');
-        changeClassToWinning(divsArray[0], divsArray[4], divsArray[8]);
+        addingWinningClass(divsArray[0], divsArray[4], divsArray[8]);
+        showWinningNotificationAndReplyButton()
 
     }
     if (divsArray[2].innerHTML == char && divsArray[4].innerHTML == char && divsArray[6].innerHTML == char) {
-
         winCombination = true;
-        window.alert('WIN');
-        changeClassToWinning(divsArray[2], divsArray[4], divsArray[6]);
+        addingWinningClass(divsArray[2], divsArray[4], divsArray[6]);
+        showWinningNotificationAndReplyButton()
 
     }
 }
 makeBoard();
 for (let i = 0; i <= divsArray.length; i++) {
-    divsArray[i].addEventListener("click", function () {
+    divsArray[i].addEventListener("click", function() {
         addSymbol(divsArray[i]);
         checkIsWinCombination();
         changeChar();
@@ -146,5 +129,12 @@ for (let i = 0; i <= divsArray.length; i++) {
             divsArray[i].className += 'kolo';
 
         }
+        checkIsWinCombination();
+
+
+        document.getElementById("replay-button").addEventListener("click", function() {
+            console.log('xd');
+            location.reload();
+        })
     })
 }

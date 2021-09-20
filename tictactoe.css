@@ -9,7 +9,7 @@ body {
 #caption {
     position: sticky;
     padding-top: 20px;
-    padding-left: 45vw;
+    padding-left: 46vw;
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
@@ -17,7 +17,8 @@ body {
     height: 5vh;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     font-size: 20px;
-    background-color: black;
+    background-color: rgb(67, 52, 83);
+    ;
     color: white;
 }
 
@@ -28,55 +29,79 @@ body {
 
 .empty {
     background-color: #ffffff;
-    border: 5px solid #000000;
+    border: 5px solid rgb(98, 86, 110);
     cursor: pointer;
     font-family: Arial;
     font-size: 15px;
     height: 10vh;
     width: 10vh;
     padding: 0;
+    margin: 5px;
 }
 
 .krzyzyk {
     background-color: #ffffff;
-    border: 5px solid #000000;
+    border: 5px solid rgb(98, 86, 110);
     cursor: pointer;
     font-family: Arial;
     font-size: 4rem;
     height: 10vh;
     width: 10vh;
     padding: 0;
-    color: rgb(34, 255, 0);
+    color: rgb(218, 186, 251);
     margin: 2px;
     text-align: center;
+    margin: 5px;
 }
 
 .kolo {
     background-color: #ffffff;
-    border: 5px solid #000000;
+    border: 5px solid rgb(98, 86, 110);
     cursor: pointer;
     font-family: Arial;
     font-size: 4rem;
     height: 10vh;
     width: 10vh;
     padding: 0;
-    color: rgb(255, 0, 0);
+    color: rgb(55, 23, 90);
     margin: 2px;
     text-align: center;
-}
-
-.winning {
-    background-color: #450000;
-    border: 5px solid #000000;
-    cursor: pointer;
-    font-family: Arial;
-    font-size: 15px;
-    height: 10vh;
-    width: 10vh;
-    padding: 0;
+    margin: 5px;
 }
 
 #board {
-    border: 2px solid red;
     display: flex;
+    justify-content: center;
+    padding-top: 25vh;
+}
+
+#winning-notification {
+    margin-top: 3vh;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-left: 45vw;
+    font-size: 3rem;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: rgb(55, 23, 90);
+}
+
+button {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    margin-left: 48vw;
+    border: 5px solid rgb(98, 86, 110);
+    color: rgb(55, 23, 90);
+}
+
+.winning {
+    background-color: #ff93fd;
+    border: 5px solid rgb(98, 86, 110);
+    cursor: pointer;
+    font-family: Arial;
+    font-size: 4rem;
+    height: 10vh;
+    width: 10vh;
+    color: rgb(255, 255, 255);
+    margin: 2px;
+    text-align: center;
+    margin: 5px;
 }
